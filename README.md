@@ -41,7 +41,6 @@ export default defineConfig([
     },
   },
 ])
-
 ```
 
 You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
@@ -71,5 +70,15 @@ export default defineConfig([
     },
   },
 ])
-
 ```
+
+src/
+├── app/ # configuração global: rotas, providers
+├── features/
+│ ├── auth/ # tudo de login (componentes, hooks, chamadas à API)
+│ └── agenda/ # tudo da agenda
+├── shared/
+│ ├── components/ # botões, inputs reutilizáveis
+│ ├── lib/ # cliente HTTP, utilitários
+│ └── hooks/
+└── main.tsx
