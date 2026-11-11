@@ -6,7 +6,7 @@ export class ApiError extends Error {
   body: ApiErrorBody
 
   constructor(status: number, body: ApiErrorBody) {
-    super(body.message)
+    super(body.mensagem)
     this.status = status
     this.body = body
   }
