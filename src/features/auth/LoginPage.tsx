@@ -24,7 +24,7 @@ export default function LoginPage({ onSuccess }: Props) {
     } catch (err) {
       const mensagem =
         err instanceof ApiError && err.status === 401
-          ? err.body.message
+          ? err.body.mensagem
           : 'Não foi possível entrar. Tente novamente.'
       setError('root', { message: mensagem })
     }
