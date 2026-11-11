@@ -1,4 +1,5 @@
 import type { ApiErrorBody } from './types'
+import { env } from './env'
 
 export class ApiError extends Error {
   status: number
@@ -12,7 +13,7 @@ export class ApiError extends Error {
 }
 
 export async function api<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}${path}`, {
+  const res = await fetch(`${env.apiUrl}${path}`, {
     ...init,
     credentials: 'include',
     headers: {
